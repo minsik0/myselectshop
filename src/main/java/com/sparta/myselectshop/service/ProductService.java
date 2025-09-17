@@ -46,7 +46,7 @@ public class ProductService {
         product.update(productMypriceRequestDto);
         return new  ProductResponseDto(product);
     }
-
+    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     public Page<ProductResponseDto> getProducts(User user, int page, int size, String sortBy, boolean isAsc) {
         Sort.Direction direction = isAsc ? Sort.Direction.ASC : Sort.Direction.DESC;
         Sort sort = Sort.by(direction, sortBy);
