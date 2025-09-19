@@ -1,7 +1,5 @@
 package com.sparta.myselectshop.mvc;
 
-package com.sparta.myselectshop.mvc;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sparta.myselectshop.config.WebSecurityConfig;
 import com.sparta.myselectshop.controller.ProductController;
@@ -20,7 +18,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+//import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.http.MediaType;
@@ -60,16 +58,16 @@ class UserProductMvcTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @MockBean//가짜 빈 생성
+    //@MockBean//가짜 빈 생성
     UserService userService;
 
-    @MockBean
+    //@MockBean
     KakaoService kakaoService;
 
-    @MockBean
+    //@MockBean
     ProductService productService;
 
-    @MockBean
+    //@MockBean
     FolderService folderService;
 
     @BeforeEach
