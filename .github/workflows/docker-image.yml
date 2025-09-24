@@ -34,7 +34,9 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_KEY }}
           script: |
+            docker compose -f ~/docker-compose.yml pull
+            docker compose -f ~/docker-compose.yml up -d
             # 기존 컨테이너 중지/삭제
-            docker ps -q --filter "name=myapp" | grep -q . && docker stop myapp && docker rm myapp || true
-            docker pull ${{ secrets.DOCKER_USERNAME }}/myapp:latest
-            docker compose up -d -p 8080:8080 --name myapp ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+            #docker ps -q --filter "name=myapp" | grep -q . && docker stop myapp && docker rm myapp || true
+            #docker pull ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+            #docker compose up -d -p 8080:8080 --name myapp ${{ secrets.DOCKER_USERNAME }}/myapp:latest
